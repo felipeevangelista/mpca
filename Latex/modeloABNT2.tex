@@ -83,7 +83,7 @@
 % T’tulo:
 %	1. T’tulo em portugus
 %	2. T’tulo em ingls
-\titulo{Implementação do SDK para monitoramento dos serviços da Universidade de Brasília\\\\
+\titulo{Implementação do SDK utilizado o protocolo SNMP para monitoramento dos serviços da Universidade de Brasília\\\\
 	Linha de Pesquisa: Engenharia de Software}{}
 %
 % Autor:
@@ -178,7 +178,6 @@
 % ---
 \maketitle
 
-
 % ---
 % Dedicat—ria
 % ---
@@ -252,23 +251,11 @@
 % ----------------------------------------------------------
 % Introdu‹o
 % ----------------------------------------------------------
-\chapter[Implementação do SDK para monitoramento dos serviços da Universidade de Brasília]{Implementação do SDK para monitoramento dos serviços da Universidade de Brasília}
+\chapter[Implementação do SDK utilizado o protocolo SNMP para monitoramento dos serviços da Universidade de Brasília]{Implementação do SDK utilizado o protocolo SNMP para monitoramento dos serviços da Universidade de Brasília}
 
 \section[Introdução]{Introdução}
 
-A manutenção de \textit{software} é um processo complexo e requer uma análise detalhada do problema quando se necessita realizar modificações, sejam elas corretivas ou evolutivas \cite{Sommerville} \cite{Pressman} \cite{cagnin2005parfait}. Assim,  para a modificação em um \textit{software}, além do entendimento das regras de negócio e da documentação, é necessário ter o conhecimento do seu funcionamento interno.  Atualmente, o Centro de Informática (CPD) da Universidade de Brasília (UnB), não possui documentação da arquitetura da maioria dos seus sistemas legados, ponto que promove a dificuldade na manutenção desses sistemas.
 
-O entendimento arquitetural de um \textit{software} sem documentação é uma tarefa árdua e dependendo da estratégia utilizada pode gerar um esforço que será desperdiçado por não identificar os ajustes realmente necessários para a recuperação da arquitetura do \textit{software} que está sendo analisado. Dessa forma, é necessário o uso de métodos e ferramentas para apoiar a análise estática para a refatoração dos sistemas legados.
-
-As técnicas de análise estática podem ser usadas para verificar os modelos de especificação - e de projeto de um sistema - para encontrar erros antes que uma versão executável do sistema esteja disponível e ainda tem a vantagem de que a presença desses erros não interrompa a verificação do sistema \cite{Sommerville}. Uma técnica de análise estática é a visualização de \textit{software}, que é usada para a criação de imagens, diagramas ou animações para relacionar informações e situações que seriam difíceis de descrever e compreender em outros formatos \cite{Spence}. 
-
-Segundo \cite{Diehl}, a área de visualização busca representar dados e informações graficamente, por meio de técnicas e abstrações, de forma que a capacidade cognitiva do ser humano (derivada da sua memória, percepção e raciocínio) seja estimulada para facilitar a compreensão de um determinado assunto, e que existem duas grandes disciplinas dentro da visualização, a visualização científica, que processa dados físicos, e a visualização da informação, que processa dados abstratos, baseando-se em alguns princípios: a exploração interativa que é a visualização interativa que permite a o usuário, ter uma visão geral e, depois, aplique filtros e \textit{zoom} para obter detalhes sobre demanda, e o foco + contexto que trata-se de uma visualização detalhada de uma parte da informação - o foco - é incorporada dentro de uma visualização do contexto, isto é, uma informação mais refinada sobre as partes relacionadas ao foco. Assim, técnicas de foco + contexto proveem detalhamento e uma visão geral ao mesmo tempo.
-
-Nos sistemas mantidos pela unidade de Serviços de Sistemas de Informação (SSI) do CPD da UnB, existem situações bastante diferentes em relação aos padrões de desenvolvimento de \textit{software} atuais. No período que antecedeu o \textit{bug} do milênio, vários sistemas eram hospedados em \textit{mainframes}. Dessa forma, para evitar que  esses \textit{softwares} interpretassem a data  do ano 2000 como 1900, esses sistemas precisaram ser migrados para novas tecnologias. Nessa época, conforme sugestão de uma empresa de consultoria contratada especificamente para essa migração, as funções e sub-rotinas foram implementadas em uma camada de  \textit{scripts Transact-SQL}.  Com isso, as regras de negócio, inserções, deleções e alterações foram unificadas em uma mesma camada, aumentando o acoplamento entre diversos sistemas e dificultando o entendimento.
-
-Diante desse cenário, é necessária uma abordagem de apoio à análise estática para a refatoração dos sistemas legados, que envolve o estudo, com foco no entendimento dos \textit{scripts Transact-SQL} e dos modelos de dados, para a melhoria de desempenho e da manutenção. Essa análise  exige o mapeamento dos processos desses sistemas e o entendimento das ferramentas de apoio que serão utilizadas, e deve ser feita baseando-se em pesquisas, teses, artigos publicados e projetos realizados sobre o assunto.
-
- 
 
 \section{Justificativa}
 
