@@ -1,0 +1,436 @@
+ %% modeloABNT2.tex, v1.0 athila
+%% Copyright 2013 by Athila e Monaro
+%%
+%% Este trabalho  uma adequa‹o das normas de disserta›es e teses
+%% da Universidade de S‹o Paulo - USP de acordo com a Norma ABNT
+%%
+%%
+%% Quaisquer dœvidas favor enviar e-mail para:
+%%
+%% athila.uno@gmail.com ou
+%% renato.monaro@gmail.comsh 
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% eesc: Modelo de Trabalho Acadmico (tese de doutorado, disserta‹o de
+% mestrado e trabalhos monogr‡ficos em geral) em conformidade com 
+% ABNT NBR 14724:2011. Esta classe estende as funcionalidades da classe
+% abnTeX2 elaborada de forma a adequar os par‰metros exigidos pelas 
+% normas USP e do departamento de eltrica da Escola de Engenharia 
+% de S‹o Carlos - USP.
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+% Op›es:
+% 	tesedr:     Formata documento para tese de doutorado
+%	qualidr:    Formata documento para qualifica‹o de doutorado
+% 	dissertmst: Formata documento para disserta‹o de mestrado
+% 	qualimst:   Formata documento para qualifica‹o de mestrado
+% ------------------------------------------------------------------------
+\documentclass[qualidr]{eesc}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+%\RequirePackage[applemac]{inputenc}
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}				% Usa a fonte Latin Modern			
+\usepackage{makeidx}            	% Cria o indice
+\usepackage{hyperref}  			% Controla a forma‹o do ’ndice
+\usepackage{lastpage}			% Usado pela Ficha catalogr‡fica
+\usepackage{indentfirst}			% Indenta o primeiro par‡grafo de cada se‹o.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{graphicx,url}			% Inclus‹o de gr‡ficos
+\usepackage{listings}
+
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no ‰mbito do Modelo eesc
+% ---
+\usepackage{lipsum}				       % para gera‹o de dummy text
+\usepackage[printonlyused]{acronym}
+\usepackage[table]{xcolor}
+% ---
+
+\renewcommand{\citebrackets}[2]{\def\citeopen{#1}\def\citeclose{#2}}
+\renewcommand{\setcitebrackets}{\citebrackets[]}
+
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[num]{abntex2cite}	% Citações padrão ABNT
+
+
+%\renewcommand{\backref}{}
+% Define os textos da citaÃ§Ã£o
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+% Informa›es de dados para CAPA e FOLHA DE ROSTO
+% ---
+%
+% T’tulo:
+%	1. T’tulo em portugus
+%	2. T’tulo em ingls
+\titulo{Análise Estática para a Refatoração dos Sistemas Legados da Universidade de Brasília\\\\
+	Linha de Pesquisa: Engenharia de Software}{}
+%
+% Autor:
+%	1. Nome completo do autor
+%	2. Formato de nome para bibliografia
+\autor{Felipe Evangelista dos Santos\\Fundação Universidade de Brasília}{E. Santos, Felipe}
+%
+% Cidade
+\local{Brasília}
+% Ano de defesa
+\data{2016}
+% çrea de concentra‹o da pesquisa
+\areaconcentracao{Engenharia de Software.}
+% Nome do orientador
+\orientador{Prof. Dr. Eduardo Henrique F.M. Teixeira}
+% Nome do coorientador
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	%liabilitiesnkcolor=blue,          	% color of internal links
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Compila a lista de abreviaturas e siglas
+% ---
+\makenomenclature
+% ---
+
+% ---
+% Inserir ficha catalogr‡fica
+%
+% Caso o comando \inserirfichacatalografica seja definido, a ficha catalogr‡fica
+% ser‡ inserida atr‡s da folha de rosto. Caso contr‡rio a p‡gina ser‡ deixada em
+% branco.
+%
+% CUIDADO: Esta op‹o deve ser preenchida antes do comando \maketitle
+% ---
+%\inserirfichacatalografica{fichaCatalografica.pdf}
+% ---
+
+% ---
+% Inserir folha de aprova‹o
+%
+% Caso o comando \inserirfolhaaprovacao seja definido, a a folha de aprova‹o
+% ser‡ inserida. Alm disso, conforme Resolu‹o CoPGr 5890, as informa›es 
+% de rodap s‹o inseridas apropriadamente na folha de rosto.
+%
+% CUIDADO: Esta op‹o deve ser preenchida antes do comando \maketitle
+% ---
+%\inserirfolhaaprovacao{folhaAprovacao.pdf}
+% ---
+
+% ----
+% In’cio do documento
+% ----
+
+\begin{document}
+
+% ----------------------------------------------------------
+% ELEMENTOS PRƒ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+% ---
+% Insere Capa, Folha de rosto, Ficha catalogr‡fica (se inserida)
+% e folha de aprova‹o (se inserida).
+% ---
+\maketitle
+
+
+% ---
+% Dedicat—ria
+% ---
+%\imprimirdedicatoria{Este trabalho  dedicado ˆ minha fam’lia e amigos.}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+%\imprimiragradecimentos{
+%Os agradecimentos principais s‹o direcionados ˆ minha filha Helo’sa e esposa Vaneide, ao meu irm‹o Ben’cio, minha m‹e Socorro, irm‹ Silvana, Vladmir e a todos os amigos.
+
+%Agradecimentos especiais ˆ equipe de desenvolvimento de software da Sysofit pelo apoio e por fazer parte deste projeto muito ambicioso.
+%}
+% ---
+
+% ---
+% Ep’grafe
+% ---
+%\imprimirepigrafe{
+%		``Somos essencialmente profissionais do sentido. Educamos, \\
+%		 quando ensinamos com sentido. Educar  impregnar de sentido\\
+%		 a vida. A profiss‹o docente est‡ centrada na vida, no bem querer.''\\
+%		(Prof. Gilberto Teixeira)
+%}
+% ---
+
+% ---
+% RESUMO e ABSTRACT
+% ---
+
+% Resumo em portugus
+%\begin{resumo}{\emph{Middleware}, Toler‰ncia a Falhas, Elasticidade, \emph{Cluster}}
+
+  %Este trabalho prop›e um \emph{middleware} para implementar  toler‰ncia a falhas e elasticidade em um \emph{cluster} de alta performance e  alta disponibilidade. Assim sendo, espera-se que o \emph{middleware} proposto seja capaz de  diminuir o nœmero de servidores necess‡rios para processar as filas de mensagens de um sistema distribu’do e, consequentemente, economizar recursos computacionais  para manuten›es evolutivas e corretivas. Para isso  necess‡ria uma arquitetura que seja el‡stica o suficiente para se adaptar ao crescimento da fila de requisi›es de forma que as mensagens n‹o se acumulem, e que seja tolerante a falhas para que eventuais paradas do sistema, por queda ou falha dos servios, n‹o impacte na operacionalidade do \emph{cluster}. 
+
+
+%\end{resumo}
+
+% ---
+
+% ---
+% inserir lista de ilustra›es
+% ---
+%\listailustracoes
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+%\listatabelas
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+%\listasiglas{abrev/Abreviaturas}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\sumario
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\mainmatter
+
+% ----------------------------------------------------------
+% Introdu‹o
+% ----------------------------------------------------------
+\chapter[Análise Estática para a Refatoração dos Sistemas Legados da Universidade de Brasília]{Análise Estática para a Refatoração dos Sistemas Legados da Universidade de Brasília}
+
+\section[Introdução]{Introdução}
+
+A manutenção de \textit{software} é um processo complexo e requer uma análise detalhada do problema quando se necessita realizar modificações, sejam elas corretivas ou evolutivas \cite{Sommerville} \cite{Pressman} \cite{cagnin2005parfait}. Assim,  para a modificação em um \textit{software}, além do entendimento das regras de negócio e da documentação, é necessário ter o conhecimento do seu funcionamento interno.  Atualmente, o Centro de Informática (CPD) da Universidade de Brasília (UnB), não possui documentação da arquitetura da maioria dos seus sistemas legados, ponto que promove a dificuldade na manutenção desses sistemas.
+
+O entendimento arquitetural de um \textit{software} sem documentação é uma tarefa árdua e dependendo da estratégia utilizada pode gerar um esforço que será desperdiçado por não identificar os ajustes realmente necessários para a recuperação da arquitetura do \textit{software} que está sendo analisado. Dessa forma, é necessário o uso de métodos e ferramentas para apoiar a análise estática para a refatoração dos sistemas legados.
+
+As técnicas de análise estática podem ser usadas para verificar os modelos de especificação - e de projeto de um sistema - para encontrar erros antes que uma versão executável do sistema esteja disponível e ainda tem a vantagem de que a presença desses erros não interrompa a verificação do sistema \cite{Sommerville}. Uma técnica de análise estática é a visualização de \textit{software}, que é usada para a criação de imagens, diagramas ou animações para relacionar informações e situações que seriam difíceis de descrever e compreender em outros formatos \cite{Spence}. 
+
+Segundo \cite{Diehl}, a área de visualização busca representar dados e informações graficamente, por meio de técnicas e abstrações, de forma que a capacidade cognitiva do ser humano (derivada da sua memória, percepção e raciocínio) seja estimulada para facilitar a compreensão de um determinado assunto, e que existem duas grandes disciplinas dentro da visualização, a visualização científica, que processa dados físicos, e a visualização da informação, que processa dados abstratos, baseando-se em alguns princípios: a exploração interativa que é a visualização interativa que permite a o usuário, ter uma visão geral e, depois, aplique filtros e \textit{zoom} para obter detalhes sobre demanda, e o foco + contexto que trata-se de uma visualização detalhada de uma parte da informação - o foco - é incorporada dentro de uma visualização do contexto, isto é, uma informação mais refinada sobre as partes relacionadas ao foco. Assim, técnicas de foco + contexto proveem detalhamento e uma visão geral ao mesmo tempo.
+
+Nos sistemas mantidos pela unidade de Serviços de Sistemas de Informação (SSI) do CPD da UnB, existem situações bastante diferentes em relação aos padrões de desenvolvimento de \textit{software} atuais. No período que antecedeu o \textit{bug} do milênio, vários sistemas eram hospedados em \textit{mainframes}. Dessa forma, para evitar que  esses \textit{softwares} interpretassem a data  do ano 2000 como 1900, esses sistemas precisaram ser migrados para novas tecnologias. Nessa época, conforme sugestão de uma empresa de consultoria contratada especificamente para essa migração, as funções e sub-rotinas foram implementadas em uma camada de  \textit{scripts Transact-SQL}.  Com isso, as regras de negócio, inserções, deleções e alterações foram unificadas em uma mesma camada, aumentando o acoplamento entre diversos sistemas e dificultando o entendimento.
+
+Diante desse cenário, é necessária uma abordagem de apoio à análise estática para a refatoração dos sistemas legados, que envolve o estudo, com foco no entendimento dos \textit{scripts Transact-SQL} e dos modelos de dados, para a melhoria de desempenho e da manutenção. Essa análise  exige o mapeamento dos processos desses sistemas e o entendimento das ferramentas de apoio que serão utilizadas, e deve ser feita baseando-se em pesquisas, teses, artigos publicados e projetos realizados sobre o assunto.
+
+ 
+
+\section{Justificativa}
+
+Os módulos implementados nos sistemas legados da UnB, apesar de facilitarem a portabilidade de \textit{front-end} em caso de descontinuidade de uma tecnologia utilizada, ainda possuem alto acoplamento entre as regras de negócio e  a persistência de dados, que são implementadas em uma única camada por meio de \textit{scripts Transact-SQL}. Além disso, a situação atual desses sistemas é desfavorável em relação aos custos referentes à capacitação dos colaboradores para a tecnologia que foi utilizada no desenvolvimento desses sistemas. 
+Ou seja, a maioria desses sistemas foi desenvolvida com linguagens que atualmente ou são obsoletas ou possuem arquiteturas que, apesar de possuírem baixo acoplamento com o núcleo da camada de regras de negócio, são de difícil entendimento e manutenção. Por conta dessas características, diversos sistemas legados da UnB possuem problemas de desempenho devido ao aumento da demanda de requisições de acesso e ao não acompanhamento tecnológico dessas arquiteturas.
+
+Dessa forma, com essa pesquisa, espera-se prover meios para facilitar o entendimento das funcionalidades para a refatoração visando otimizar o desempenho de funcionamento dos sistemas legados da UnB. 
+Além disso pretende-se também que a análise estática para a refatoração dos sistemas possa trazer grandes benefícios como o entendimento das informações a partir do código fonte, criar e especificar processos e métodos de migração e \textit{refactoring}, realizar estudos e utilizar métricas para estatísticas dos sistemas legados. 
+
+
+
+\section{Objetivo Geral}
+
+O objetivo geral da pesquisa proposta é realizar a análise estática para a refatoração dos sistemas legados da UnB. Para isso serão realizadas  pesquisas e utilizados projetos de arquitetura de \textit{software}, técnicas e ferramentas de apoio, visando à melhoria de desempenho e manutenibilidade.
+
+
+\subsection{Objetivos Específicos}
+
+Os objetivos específicos são:
+
+\begin{itemize}
+	 
+\item Levantamento do estado da arte por meio da análise crítica dos artigos científicos recentes referentes ao tema análise estática para a refatoração dos sistemas legados.
+
+\item Definir um processo para a realização da refatoração dos sistemas legados da UnB baseando-se nas  abordagens mais relevantes estudadas na literatura;
+
+\item Utilizar ferramentas de apoio para a análise estática para a refatoração dos sistemas legados da UnB;
+
+\item Realizar um estudo de caso aplicando o método desenvolvido  para promover adequações e melhorias  em um ou mais sistemas legados da UnB;
+
+\item Publicação de artigos científicos contendo descobertas relevantes e os resultados do estudo de caso realizado.
+
+\end{itemize}
+
+\section{Revisão da Literatura}
+
+Em \cite{Vasconcelos} é apresentada a importância dos \textit{softwares} legados e a dificuldade para mantê-los, e que devem ser definidas técnicas e metodologias para a migração desses sistemas para uma nova tecnologia. Em \cite{Sommerville} é descrita a modularização de programas agrupando as partes relacionadas e removendo as redundâncias de funcionalidades. Em alguns casos, esta fase pode envolver reconstrução arquitetural  por meio de um processo manual. Entretanto, em \cite{Pressman} é explicado que as arquiteturas de \textit{software} incorporam a modularidade dividindo as sub-rotinas e funções em componentes separados, nomeados, enderençáveis e integrados para atender aos requisitos do problema. 
+
+ Uma abordagem interessante para modularizar o comportamento excepcional de um sistema é descrita em  \cite{Raquel}. A importância desse trabalho consiste em estudos de caso para a refatoração de dois sistemas orientados a objetos e de um sistema orientado a aspectos.
+
+Em \cite{Santos} são descritas abordagens que se baseiam em técnicas para recuperar informações necessárias para identificar classes distintas que efetuam as mesmas funcionalidades. Dessa forma, essas classes são selecionadas para serem remodularizadas. Uma outra abordagem também aplica a modularização, que é  uma técnica altamente recomendável tanto pela eficiência no projeto e desenvolvimento dos mesmos quanto pela quantidade, confiabilidade e manutenção do produto elaborado por meio de ferramentas \cite{Farrer}. Nesse estudo partes comuns a vários programas ou que se repetem dentro de um mesmo programa são modularizadas em uma sub-rotina ou função, e consequentemente, são programadas e testadas uma só vez. Entretanto, deve haver uma preocupação com o desempenho, devido a construção de módulos genéricos e comuns.
+
+
+
+\section{Metodologia}
+
+O estudo da análise estática para a refatoração dos sistemas legados será realizado no CPD da UnB, e a execução do projeto ocorrerá  na área de desenvolvimento de sistemas do setor SSI. 
+
+Serão coletados dados sobre os sistemas legados, a fim de buscar informações relativas às funcionalidades, regras de negócio e principais tecnologias que foram utilizadas. Assim haverá uma análise prévia das funcionalidades implementadas dos sistemas legados e como as regras de negócio podem ser codificadas em módulos e sub-rotinas de forma mais eficiente para atender às situações específicas de cada sistema.
+
+Faz parte ainda do escopo metodológico do projeto a realização de pesquisas para o entendimento dos módulos, funções e sub-rotinas dos sistemas legados em que  o escopo e a abrangência de funcionamento podem apresentar ambientes e configurações específicos. Para a melhoria desse entendimento serão utilizados  processos e ferramentas de engenharia reversa e de reengenharia para análise e levantamento de problemas com modularidade e arquitetura. Um ambiente computacional será disponibilizado para a realização de testes dos sistemas, verificação de consistência da refatoração e a aceitação dos envolvidos no projeto.
+
+
+\section{Plano de Trabalho e Cronograma}
+
+O candidato à vaga no Mestrado em Computação Aplicada cursou como aluno especial a disciplina Mineração de Dados e Textos (MDT) e obteve aprovação. Além disso, encontra-se cursando no período letivo 2016/1 as disciplinas Arquitetura e Desenho de \textit{Software} (ADS), Engenharia de Requisitos (ER) e  Tópicos Avançados em Engenharia de \textit{Software} (TAES) . Considerando-se o aproveitamento desses 8 (oito) créditos, espera-se cursar 16 (dezesseis) créditos em disciplinas obrigatórias e defender dissertação para a obtenção do título de Mestre em Computação Aplicada. Para esse fim, serão cursadas 8 (oito) disciplinas de 2 (dois) créditos, sendo 5 (cinco) do Núcleo Básico e 3 (três) da linha de Engenharia de Software, distribuídas conforme mostrado na Tabela \ref{tab:cronograma2}. 
+
+Como o candidato a discente é servidor público da UnB, lotado no CPD, será dedicado o regime de tempo parcial. Dessa forma, uma vez que a referida instituição pública disponibiliza liberação de horário para os seus servidores de quadro efetivo cursarem disciplinas de cursos de pós-graduação, serão necessárias 12 (doze) horas semanais para a realização das disciplinas presenciais, mais 20 (vinte) horas de estudo, totalizando 32 (trinta e duas) horas semanais de dedicação. Após cursadas as disciplinas necessárias para completar os 24 (vinte e quatro) créditos exigidos para o título de Mestre, este trabalho será desenvolvido por meio de oito tarefas listadas a seguir, e por meio do cronograma apresentado na Tabela \ref{tab:cronograma2}. 
+
+  1. Levantamento do estado da arte sobre análise estática para a refatoração dos sistemas legados; 
+  
+  2. Escolha das abordagens que serão utilizadas por meio de características não exploradas nas soluções atuais de análise estática para a refatoração dos sistemas legados;
+  
+  3. Exame de Qualificação de Mestrado;
+  
+  4. Desenvolvimento de novas abordagens que serão utilizadas na análise estática para a refatoração dos sistemas legados da UnB;
+    
+  5. Prova de conceito das abordagens desenvolvidas;
+    
+  6. Submissão de artigos científicos em congressos e periódicos;
+  
+  7. Escrita da dissertação de mestrado;
+  
+  8. Defesa do mestrado.
+
+\begin{table}[!htpb]
+	\centering
+	\caption{Cronograma de Atividades do Mestrado}
+	\begin{center}
+		\begin{tabular}{|l|c|c|c|c|}
+			\hline
+			Tarefa  &2016/2   &2017/1 &2017/2 &2018/1   \\
+			\hline\hline
+			Disciplinas do Núcleo Básico &X & & & \\
+			\hline
+			Disciplinas de Engenharia de \textit{Software} & &X & &  \\
+			\hline
+			Tarefa 1 &X &X &X &  \\
+			\hline
+			Tarefa 2 & &X &X &  \\
+			\hline
+			Tarefa 3 & & &X &  \\
+			\hline
+			Tarefa 4 & &X &X &X  \\
+			\hline
+			Tarefa 5 & & &X &X  \\
+			\hline
+			Tarefa 6 & & & &X  \\
+			\hline
+			Tarefa 7 & &X &X &X  \\
+			\hline
+			Tarefa 8 & & & &X  \\
+			\hline
+		\end{tabular}
+		\label{tab:cronograma2}
+	\end{center}
+\end{table} 
+
+
+% ---
+
+
+
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+% ---
+
+% ---
+	% Conclus‹o
+% \textemdash\ 
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PîS-TEXTUAIS
+% ----------------------------------------------------------
+%\postextual
+
+% ----------------------------------------------------------
+% Referncias bibliogr‡ficas
+% ----------------------------------------------------------
+%\nocite{*}
+\makeatletter
+\renewcommand\@biblabel[1]{{\parbox{0.8cm}{[#1]}}}
+\makeatother
+\bibliography{bib}
+% -----------------------
+% ----------------------------------------------------------
+% Gloss‡rio
+% ----------------------------------------------------------
+%
+%\glossary
+
+\bookmarksetup{startatroot}% 
+
+% ----------------------------------------------------------
+% Apndices
+% ----------------------------------------------------------
+% ---
+% Inicia os apndices
+% ---
+
+% ---
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+% ---
+% Inicia os anexos
+% ---
+
+\end{document}
+

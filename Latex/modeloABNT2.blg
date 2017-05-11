@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: modeloABNT2.aux
+The style file: abntex2-num.bst
+Database file #1: abntex2-options.bib
+Database file #2: bib.bib
+Repeated entry---line 73 of file bib.bib
+ :  @book{Pressman
+ :                ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "abnt-year-extra-label=yes"
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-num.bst versão v-1.8           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex2.googlecode.com                           |
++---------------------------------------------------------+
+(There was 1 error message)

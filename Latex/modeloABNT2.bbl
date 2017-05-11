@@ -1,0 +1,72 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.8 }
+
+\bibitem{Sommerville}
+\abntrefinfo{Sommerville}{SOMMERVILLE}{2016}
+{SOMMERVILLE, I. \textbf{Software engineering.} D\'ecima edi\c{c}\~ao. New York
+  City, USA: Pearson Publisher, 2016.}
+
+\bibitem{Pressman}
+\abntrefinfo{Pressman}{PRESSMAN}{2011}
+{PRESSMAN, R.~S. \textbf{Engenharia de Software - Uma abordagem profissional.}
+  S\'etima edi\c{c}\~ao. S\~ao Paulo: Editora Makron Books, 2011.}
+
+\bibitem{cagnin2005parfait}
+\abntrefinfo{Cagnin}{CAGNIN}{2005}
+{CAGNIN, M.~I.
+\textbf{PARFAIT: uma contribui\c{c}\~ao para a reengenharia de software baseada
+  em linguagens de padr\~oes e frameworks}.
+Tese (Doutorado) --- Universidade de S\~ao Paulo (USP). Instituto de Ci\^encias
+  Matem\'aticas e de Computa\c{c}\~ao de S\~ao Carlos, 2005.}
+
+\bibitem{Spence}
+\abntrefinfo{Spence}{SPENCE}{2014}
+{SPENCE, R. \textbf{Information Visualization.} Third edition. Springer
+  International Publishing, 2014.
+ISBN 978-3-319-07341-5. Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/link\-.springer\-.com\-/book\-/10\-.1007\-/978-3-319-07341-5$>$}{http://link.springer.com/book/10.1007/978-3-319-07341-5}.}
+
+\bibitem{Diehl}
+\abntrefinfo{Diehl}{DIEHL}{2007}
+{DIEHL, S. \textbf{Software Visualization: Visualizing the Structure,
+  Behaviour, and Evolution of Software}. Secaucus, NJ, USA: Springer-Verlag New
+  York Publisher, 2007.
+ISBN 3540465049.}
+
+\bibitem{Vasconcelos}
+\abntrefinfo{Vasconcelos}{VASCONCELOS}{2007}
+{VASCONCELOS, A. P.~V. de.
+\textbf{Uma Abordagem de apoio \`a Cria\c{c}\~ao de Arquiteturas de
+  Refer\^encia de Dom\'inio baseada na An\'alise de Sistemas Legados.}
+Tese (Doutorado) --- Universidade Federal do Rio de Janeiro., 2007.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/reuse\-.cos\-.ufrj\-.br\-/files\-/publicacoes\-/doutorado\-/Dou\underline{\
+  }Aline\-.pdf$>$}{http://reuse.cos.ufrj.br/files/publicacoes/doutorado/Dou_Aline.pdf}.}
+
+\bibitem{Raquel}
+\abntrefinfo{Ferreira}{FERREIRA}{2006}
+{FERREIRA, R. de A.~M.
+\textbf{Modulariza\c{c}\~ao de tratamento de exce\caption{c}\~oes usando
+  programa\c{c}\~ao orientada a aspectos.}
+Disserta\c{c}\~{a}o (Mestrado) --- Universidade Estadual de Campinas, 2006.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.bibliotecadigital\-.unicamp\-.br\-/document\-/?code=vtls000414124$>$}{http://www.bibliotecadigital.unicamp.br/document/?code=vtls000414124}.}
+
+\bibitem{Santos}
+\abntrefinfo{Santos, Valente e Anquetil}{SANTOS; VALENTE; ANQUETIL}{2014}
+{SANTOS, G.; VALENTE, M.~T.; ANQUETIL, N. Remodularization analysis using
+  semantic clustering.
+\textbf{IEEE Conference on Software Maintenance, Reengineering and Reverse
+  Engineering (CSMR-WCRE)}, p. 224--233, 2014.}
+
+\bibitem{Farrer}
+\abntrefinfo{Farrer et al.}{FARRER et al.}{2008}
+{FARRER, H. et al. \textbf{Programa\c{c}\~ao estruturada de Computadores:
+  Algoritmos estruturados.} Terceira edi\c{c}\~ao. Rio de Janeiro: Editora LTC,
+  2008.}
+
+\end{thebibliography}
